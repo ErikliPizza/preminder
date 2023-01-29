@@ -1,0 +1,33 @@
+{% extends "base.html"  %}
+{% block title %}LOGIN{% endblock %}
+
+{% block body %}
+  <div class="d-flex justify-content-center">
+  <form action="login" method="post" class="text-center">
+    <fieldset class="border rounded-5 p-5 mt-1">
+    <legend class="float-none w-auto px-3 text-uppercase">giriş yap</legend>
+    <div class="p-1 lead">
+    <label for="mail">E-Posta Adresi</label>
+    <input type="text" id="mail" class="form-control mt-1 text-center col-12" name="mail" value="{{ mail }}"/>
+    </div>
+
+    <div class="p-1 lead">
+    <label for="password">Şifre</label>
+    <input type="password" id="password" class="form-control mt-1 text-center col-12" name="password" value="{{ password }}"/>
+    </div>
+
+    <div>
+    <input type="submit" class="btn btn-primary p-1 mt-2 col-11"  value="Giriş Yap"/>
+    </div>
+    </fieldset>
+    henüz üye değil misin? <a href="sign" class="text-decoration-none text-success"><strong>üye ol</strong></a>
+  </form>
+  </div>
+  <br>
+  <ul class="text-center list-unstyled">
+    {% if error %}
+      <li class="text-danger">{{ error }}</li>
+    {% endif %}
+  </ul>
+
+{% endblock %}

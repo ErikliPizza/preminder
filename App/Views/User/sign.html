@@ -1,0 +1,40 @@
+{% extends "base.html"  %}
+{% block title %}REGISTER{% endblock %}
+
+{% block body %}
+
+<div class="d-flex justify-content-center">
+
+<form action="sign" method="post" class="text-center">
+  <fieldset class="border rounded-5 p-5 mt-1">
+  <legend class="float-none w-auto px-3 text-uppercase">üye ol</legend>
+
+  <label for="username">Kullanıcı Adı</label>
+  <div class="p-1 lead">
+  <input type="text" id="username" name="username" value="{{ username }}"/>
+  </div>
+
+  <label for="mail">E-Posta Adresi</label>
+  <div class="p-1 lead">
+  <input type="email" id="mail" name="mail" value="{{ mail }}"/>
+  </div>
+
+  <label for="password">Şifre</label>
+  <div class="p-1 lead">
+  <input type="text" id="password" name="password" value="{{ password }}"/>
+  </div>
+  <div>
+  <input type="submit" class="btn btn-primary p-1 mt-2 col-11"  value="Gönder"/>
+  </div>
+
+  </fieldset>
+  zaten üye misiniz? <a href="login" class="text-decoration-none text-success"><strong>giriş yap</strong></a>
+</form>
+</div>
+<br>
+<ul class="text-center list-unstyled">
+  {% for err in errors %}
+    <li class="text-danger">{{ err }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

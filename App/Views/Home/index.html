@@ -1,0 +1,21 @@
+{% extends "base.html"  %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<div class="px-4 pt-3 my-5 text-center">
+ <h1 class="display-4 fw-bold">Aboneliklerinizi Takip Edin!</h1>
+ <div class="col-lg-6 mx-auto">
+   <p class="lead mb-4">Basit ve etkili! Netflix, Spotify ve daha fazlası. Küçük bir meblağ olarak gördüğünüz aylık aboneliklerinizi kartınızın "Kart Hareketleri" bölümünden inceleyin, 1 aylık otomatik abonelik ödemelerinizi profilinize ekleyin ve gerisini bize bırakın; bir daha buraya uğramanıza gerek yok. <strong>Aboneliklere ayırdığınız aylık tutarı görüntüleyin, otomatik ödeme tarihlerinde hatırlatıcı mailler alın, aylık giderinizi ise ay sonunda ayrıntılı bir mail raporuyla size ulaştıralım!</strong></p>
+   <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+     <a href="/payments/index"><button type="button" class="btn btn-success btn-lg px-4 me-sm-3">Panele Git</button></a>
+     <a href="/users/sign"><button type="button" class="btn btn-outline-secondary btn-lg px-4">Üye Ol</button></a>
+   </div>
+ </div>
+ <div class="overflow-hidden" style="max-height: 30vh;">
+   <div class="container px-5">
+     <img src="imgs/hero.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+   </div>
+ </div>
+</div>
+{% endblock %}

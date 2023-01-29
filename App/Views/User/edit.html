@@ -1,0 +1,51 @@
+{% extends "base.html"  %}
+{% block title %}REGISTER{% endblock %}
+
+{% block body %}
+
+<div class="d-flex justify-content-center">
+  <fieldset class="border rounded-5 p-2 mt-1 col-6">
+  <legend class="float-none w-auto px-3 text-uppercase">DÜZENLE</legend>
+<form action="edit" method="post" class="text-center">
+  <div class="p-1 lead">
+  <label for="mail">E-Posta Adresi</label>
+  <input type="email" id="mail" class="form-control mt-1 text-center col-12" name="mail" value="{{ mail }}"/>
+  </div>
+
+  <div class="p-1 lead">
+  <label for="password">Şifre</label>
+  <input type="password" id="password" class="form-control mt-1 text-center col-12" name="password" value="{{ password }}"/>
+  </div>
+  <hr>
+
+  <div class="p-1 lead">
+  <label for="newusername" class="text-warning">Yeni Kullanıcı Adı</label>
+  <input type="text" {% if newusername %} disabled {% endif %} id="newusername" class="form-control mt-1 text-center col-12" name="newusername" value="{{ newusername }}"/>
+  </div>
+
+  <div class="p-1 lead">
+  <label for="newmail" class="text-warning">Yeni E-Posta Adresi</label>
+  <input type="email" {% if newmail %} disabled {% endif %} id="newmail" class="form-control mt-1 text-center col-12" name="newmail" value="{{ newmail }}"/>
+  </div>
+
+  <div class="p-1 lead">
+  <label for="newpassword" class="text-warning">Şifre</label>
+  <input type="text" {% if newpassword %} disabled {% endif %} id="newpassword" class="form-control mt-1 text-center col-12" name="newpassword" value="{{ newpassword }}"/>
+  </div>
+
+  <div>
+  <input type="submit" {% if newusername or newmail or newpassword %} disabled {% endif %} class="btn btn-primary p-1 mt-2 col-11"  value="Güncelle"/>
+  </div>
+</form>
+</fieldset>
+</div>
+<ul class="text-center list-unstyled">
+  {% if error %}
+    <li class="text-danger">{{ error }}</li>
+  {% endif %}
+
+  {% for err in errors %}
+    <li class="text-danger">{{ err }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}
