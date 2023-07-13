@@ -5,6 +5,9 @@ A simple reminder for your monthly subscriptions. Created with PHP <a href="http
 # Cron Job
 You need to set-up the cron job configurations for sending notifications to the user for their subscriptions on the payment day. See the ../Messager.php file for detailed informations.
 <br>
+
 ![image](https://github.com/ErikliPizza/preminder/assets/39195701/35badcfe-9f4e-494c-ac87-6bf6d8d2ae41)
 
 
+# Warning
+Maybe you want to encrypt the Mail.php's token content for quick deletion process instead of sending it as plant text. It may contain potential security issues.
